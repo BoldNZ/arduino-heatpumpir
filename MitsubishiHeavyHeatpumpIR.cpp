@@ -245,11 +245,14 @@ void MitsubishiHeavyZEAHeatpumpIR::send(IRSender& IR, uint8_t powerModeCmd, uint
     case FAN_3:
       fanSpeed = MITSUBISHI_HEAVY_ZEA_FAN3;
       break;
+    case FAN_4:
+      fanSpeed = MITSUBISHI_HEAVY_ZEA_FAN4;
+      break;
   }
 
   if (silentModeCmd)
   {
-  	// Silent mode doesn't exist on ZJ model, use ECONO mode instead
+  	// Silent mode doesn't exist on ZEA model, use ECONO mode instead
     fanSpeed = MITSUBISHI_HEAVY_ZEA_SILENT_ON;
   }
 

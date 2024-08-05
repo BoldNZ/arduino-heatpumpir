@@ -618,7 +618,7 @@ void MitsubishiHeavyZJHeatpumpIR::sendMitsubishiHeavy(IRSender& IR, uint8_t powe
 
 void MitsubishiHeavyZEAHeatpumpIR::sendMitsubishiHeavy(IRSender& IR, uint8_t powerMode, uint8_t operatingMode, uint8_t fanSpeed, uint8_t temperature, uint8_t swingV, uint8_t swingH, uint8_t cleanMode)
 {
-  uint8_t MitsubishiHeavyZEATemplate[] = { 0x52, 0xAE, 0xC3, 0x26, 0xD9, 0x11, 0x00, 0x07, 0x00, 0x00, 0x00 };
+  uint8_t MitsubishiHeavyZEATemplate[] = { 0x52, 0xAE, 0xC3, 0x26, 0xD9, 0xDF, 0x20, 0x07, 0x00, 0x00, 0x00 };
   //                                         0     1     2     3     4     5     6     7     8     9    10
 
   // Horizontal & vertical air flow + allergen + clean + 3D

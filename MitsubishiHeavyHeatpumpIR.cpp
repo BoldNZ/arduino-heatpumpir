@@ -628,10 +628,10 @@ void MitsubishiHeavyZEAHeatpumpIR::sendMitsubishiHeavy(IRSender& IR, uint8_t pow
   MitsubishiHeavyZEATemplate[6] |= ((swingH << 4) & 0b11110000) | (swingV & 0b00000001);
 
   // Vertical air flow + fan speed
-  MitsubishiHeavyZEATemplate[7] |= fanSpeed | ((swingV >>1) & 0b00011000);
+  MitsubishiHeavyZEATemplate[7] |= (fanSpeed & 0b11100000) | ((swingV >>1) & 0b00011000);
 
   // Vertical air flow + fan speed
-  MitsubishiHeavyZEATemplate[8] |= ((swingV >> 1) & 0b00011000);
+  MitsubishiHeavyZEATemplate[8] |= ((fanSpeed << 4) & 0b11100000) | ((swingV >> 1) & 0b00011000);
 
   // Power state + operating mode + temperature
   MitsubishiHeavyZEATemplate[9] |= operatingMode | powerMode | temperature;
